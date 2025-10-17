@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/common/Button';
@@ -8,6 +9,12 @@ import { useUserStore } from '@/store/userStore';
 export const HomePage = () => {
   const router = useRouter();
   const { isAuthenticated, logout } = useUserStore();
+  const [mounted, setMounted] = useState(false);
+
+  // Hydration 문제 해결: 클라이언트 사이드에서만 실행
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleStartClick = () => {
     if (isAuthenticated) {
@@ -34,7 +41,7 @@ export const HomePage = () => {
               </Link>
             </div>
             <div className="flex items-center gap-4">
-              {isAuthenticated ? (
+              {mounted && isAuthenticated ? (
                 <>
                   <Link href="/dashboard">
                     <Button variant="text">대시보드</Button>
@@ -43,7 +50,7 @@ export const HomePage = () => {
                     로그아웃
                   </Button>
                 </>
-              ) : (
+              ) : mounted ? (
                 <>
                   <Link href="/login">
                     <Button variant="text">로그인</Button>
@@ -52,7 +59,7 @@ export const HomePage = () => {
                     <Button variant="primary">회원가입</Button>
                   </Link>
                 </>
-              )}
+              ) : null}
             </div>
           </div>
         </div>

@@ -61,7 +61,7 @@ npm install
 ```bash
 cp .env.example .env
 # .env 파일에서 DATABASE_URL 설정
-# 예: DATABASE_URL="postgresql://user:password@localhost:5432/ai_recruit_platform?schema=public"
+# 예: DATABASE_URL="postgresql://user:password@localhost:5432/ai_recruit_platform?schema.prisma=public"
 ```
 
 ### Seed 실행
