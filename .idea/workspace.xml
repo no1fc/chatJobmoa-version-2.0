@@ -19,8 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]">
+      <change beforePath="$PROJECT_DIR$/.aiassistant/rules/project_setting.md" beforeDir="false" afterPath="$PROJECT_DIR$/.aiassistant/rules/project_setting.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/module_markdown/PRJ-001.md" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/module_markdown/PRJ-001.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,7 @@
       <updated>1760577394310</updated>
       <workItem from="1760577395479" duration="14088000" />
       <workItem from="1760657305893" duration="4125000" />
-      <workItem from="1760675748478" duration="1941000" />
+      <workItem from="1760675748478" duration="5323000" />
     </task>
     <task id="LOCAL-00001" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
       <option name="closed" value="true" />
@@ -174,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760677034580</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]">
+      <option name="closed" value="true" />
+      <created>1760677717606</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760677717606</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
