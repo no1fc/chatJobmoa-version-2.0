@@ -1,9 +1,27 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/common/Button';
+import { useUserStore } from '@/store/userStore';
 
 export const HomePage = () => {
+  const router = useRouter();
+  const { isAuthenticated, logout } = useUserStore();
+
+  const handleStartClick = () => {
+    if (isAuthenticated) {
+      router.push('/dashboard');
+    } else {
+      router.push('/signup');
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    router.push('/');
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
@@ -11,15 +29,30 @@ export const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">AI 채용 플랫폼</h1>
+              <Link href="/">
+                <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">AI 채용 플랫폼</h1>
+              </Link>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/login">
-                <Button variant="text">로그인</Button>
-              </Link>
-              <Link href="/signup">
-                <Button variant="primary">회원가입</Button>
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link href="/dashboard">
+                    <Button variant="text">대시보드</Button>
+                  </Link>
+                  <Button variant="secondary" onClick={handleLogout}>
+                    로그아웃
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login">
+                    <Button variant="text">로그인</Button>
+                  </Link>
+                  <Link href="/signup">
+                    <Button variant="primary">회원가입</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -40,16 +73,16 @@ export const HomePage = () => {
               기본 정보만 입력하면 전문적인 채용 공고가 완성됩니다.
             </p>
             <div className="flex justify-center gap-4">
-              <Link href="/signup">
-                <Button variant="accent" size="lg">
-                  무료로 시작하기
-                </Button>
-              </Link>
-              <Link href="/login">
-                <Button variant="secondary" size="lg">
-                  로그인
-                </Button>
-              </Link>
+              <Button variant="accent" size="lg" onClick={handleStartClick}>
+                무료로 시작하기
+              </Button>
+              {!isAuthenticated && (
+                <Link href="/login">
+                  <Button variant="secondary" size="lg">
+                    로그인
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -186,11 +219,9 @@ export const HomePage = () => {
           <p className="text-xl text-blue-100 mb-8">
             무료로 AI 채용 콘텐츠를 생성해보세요
           </p>
-          <Link href="/signup">
-            <Button variant="accent" size="lg">
-              무료로 시작하기
-            </Button>
-          </Link>
+          <Button variant="accent" size="lg" onClick={handleStartClick}>
+            무료로 시작하기
+          </Button>
         </div>
       </section>
 

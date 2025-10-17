@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  phoneNumber   String?   @unique
+  emailVerified Boolean   @default(false)
+  phoneVerified Boolean   @default(false)
+
+  // 동의 항목 필드
+  termsAgreedAt      DateTime?
+  marketingAgreement Boolean   @default(false)
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  jobPostings JobPosting[]
+
+  @@map("users")
+}
+
+// 인증번호 임시 저장을 위한 모델
+model Verification {
+  id        String   @id @default(cuid())
+  type      String   // "EMAIL" or "SMS"
+  recipient String
+  code      String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([recipient, type])
+  @@map("verifications")
+}
+
+// 채용 공고 프로젝트 모델 (PRJ-001 대비)
+model JobPosting {
+  id          String   @id @default(cuid())
+  userId      String
+
+  // 기본 정보
+  title       String
+  companyName String
+  jobType     String   // 직종
+  position    String   // 직무
+  experience  String   // 경력 요건
+  employment  String   // 고용 형태
+  salary      String?  // 급여
+  location    String   // 근무지
+
+  // 상세 정보
+  description String?  @db.Text
+  requirements String? @db.Text
+  benefits    String?  @db.Text
+
+  // 기업 정보
+  companyInfo String?  @db.Text
+  culture     String?  @db.Text
+
+  // 생성된 콘텐츠
+  posterUrl   String?
+  bannerUrl   String?
+  htmlContent String?  @db.Text
+
+  // 상태
+  status      String   @default("draft") // draft, published, archived
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("job_postings")
+}
