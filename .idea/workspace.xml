@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.VCS.GenerateCommitMessage">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.VCS.GenerateCommitMessage" />
+              <option name="content" value="**[커밋 타입][$GIT_BRANCH_NAME]: [제목]**&#10;&#10;### 1. 주요 변경 사항 (코드 리뷰)   &#10;- (여기에 코드 변경에 대한 상세 설명을 코드 리뷰처럼 작성)&#10;- (예: `A` 함수의 로직을 `B`로 변경하여 성능을 개선함)&#10;&#10;### 2. 이번 업데이트 요약   &#10;- (이번 커밋으로 변경된 내용의 핵심 요약)&#10;&#10;### 3. 확인 체크리스트   &#10;- [ ] 관련 기능 테스트 완료&#10;- [ ] 빌드 성공 확인&#10;&#10;# 추가 지침&#10;    - 모든 내용에 대해서는 한국어로 작성되어야한다." />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[USR-001][beta_0.0.1]: [Create USR MarkDown Docs Create]" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="beta_0.0.1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="AISelfReview" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="347vOoGZSNMb4fC2dzQFgEnSV6U" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/JobmoaIntelliJFolder/chatJobmoa-version-2.0",
+    "llm.McpServerEditPanel.switcher": "1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\JobmoaIntelliJFolder\\chatJobmoa-version-2.0\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\JobmoaIntelliJFolder\chatJobmoa-version-2.0\.aiassistant\rules" />
+      <recent name="C:\JobmoaIntelliJFolder\chatJobmoa-version-2.0\Docs\difulat_markdown" />
+      <recent name="C:\JobmoaIntelliJFolder\chatJobmoa-version-2.0\Docs" />
+      <recent name="C:\JobmoaIntelliJFolder\chatJobmoa-version-2.0\.aiassistant" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="" />
+      <created>1760577394310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760577394310</updated>
+      <workItem from="1760577395479" duration="14088000" />
+      <workItem from="1760657305893" duration="4125000" />
+    </task>
+    <task id="LOCAL-00001" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
+      <option name="closed" value="true" />
+      <created>1760578082983</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760578082983</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
+      <option name="closed" value="true" />
+      <created>1760578283830</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760578283830</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project rule Add">
+      <option name="closed" value="true" />
+      <created>1760601862897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760601862897</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[PAG-001][beta_0.0.1]: [Main Page Add]&#10;&#10;### 1. 주요 변경 사항 (코드 리뷰)&#10;프로젝트 폴더를 제작하고 모든 Front Main page를 제작&#10;&#10;### 2. 이번 업데이트 요약   &#10;- Front Main page를 제작&#10;&#10;### 3. 확인 체크리스트   &#10;- [O] 관련 기능 테스트 완료&#10;- [O] 빌드 성공 확인">
+      <option name="closed" value="true" />
+      <created>1760660355125</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760660355125</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[USR-001][beta_0.0.1]: [Create USR MarkDown Docs Create]">
+      <option name="closed" value="true" />
+      <created>1760661613088</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760661613088</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가." />
+    <MESSAGE value="project rule Add" />
+    <MESSAGE value="[PAG-001][beta_0.0.1]: [Main Page Add]&#10;&#10;### 1. 주요 변경 사항 (코드 리뷰)&#10;프로젝트 폴더를 제작하고 모든 Front Main page를 제작&#10;&#10;### 2. 이번 업데이트 요약   &#10;- Front Main page를 제작&#10;&#10;### 3. 확인 체크리스트   &#10;- [O] 관련 기능 테스트 완료&#10;- [O] 빌드 성공 확인" />
+    <MESSAGE value="[USR-001][beta_0.0.1]: [Create USR MarkDown Docs Create]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[USR-001][beta_0.0.1]: [Create USR MarkDown Docs Create]" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
