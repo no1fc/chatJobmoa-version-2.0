@@ -18,9 +18,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]">
-      <change beforePath="$PROJECT_DIR$/.aiassistant/rules/project_setting.md" beforeDir="false" afterPath="$PROJECT_DIR$/.aiassistant/rules/project_setting.md" afterDir="false" />
+    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Docs/module_markdown/PRJ,INP,GEN,OUT-001.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/ai.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/generation.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/smeBenefit.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/dto/ai.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/dto/smeBenefit.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/ai.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/generation.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/modules/smeBenefit.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/aiImage.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/aiText.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/generation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/services/smeBenefit.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/banner-1760690436580.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/banner-1760692063141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/poster-1760690436580.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/poster-1760692063141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/result/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/common/Textarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/posting/AIKeywordSuggester.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/posting/BenefitSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/posting/ColorPalettePicker.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/axios.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/aiGeneratorService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/utils/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/posting.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/posting.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/dto/posting.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/dto/posting.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/posting.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/posting.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/postingService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/postingService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +74,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="PRJ-001" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +103,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PRJ-001&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;beta__0.1.1&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -108,7 +145,7 @@
       <updated>1760577394310</updated>
       <workItem from="1760577395479" duration="14088000" />
       <workItem from="1760657305893" duration="4125000" />
-      <workItem from="1760675748478" duration="5323000" />
+      <workItem from="1760675748478" duration="16810000" />
     </task>
     <task id="LOCAL-00001" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
       <option name="closed" value="true" />
@@ -182,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760677717606</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="project_setting.md 수정">
+      <option name="closed" value="true" />
+      <created>1760681316706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1760681316706</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +251,8 @@
     <MESSAGE value="[USR-001][beta_0.0.1]: [Create USR MarkDown Docs Create]" />
     <MESSAGE value="[USR-001] User Login &amp; Sign Up Page And BackAnd Create&#10;&#10;[업데이트 내역]&#10;* ** Login Page 추가&#10;* ** Login 기능 추가&#10;* ** Sign Up Page 추가&#10;* ** Sign Up 기능 추가&#10;&#10;[추가할 기능]&#10;* ** 이메일 발송 API&#10;* ** 문자 발송 API&#10;&#10;[테스트 결과]&#10;[o] 사용자 로그인 확인&#10;[o] 사용자 회원가입 확인&#10;[o] 웹 테스트 확인" />
     <MESSAGE value="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]" />
-    <option name="LAST_COMMIT_MESSAGE" value="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]" />
+    <MESSAGE value="project_setting.md 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="project_setting.md 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

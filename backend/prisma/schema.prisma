@@ -65,6 +65,9 @@ model JobPosting {
   salaryRange    String? @map("salary_range")     // 급여 수준
   workLocation   String? @map("work_location")    // 근무지
 
+  //--- INP-002: AI 키워드 (최대 5개 저장) ---
+  keywords       String[] @default([])           // 선택된 키워드 배열 (최대 10개: AI 추천 + 사용자 입력)
+
   //--- INP-003: 기업 정보 ---
   companyIntro   String? @map("company_intro")    @db.Text
   companyCulture String? @map("company_culture")  @db.Text
@@ -85,4 +88,16 @@ model JobPosting {
 
   @@index([userId]) // 사용자가 자기 프로젝트 목록을 빠르게 조회하도록 인덱스 설정
   @@map("job_postings")
+}
+
+// 중소기업 취업자 지원 혜택 (INP-005)
+model SmeBenefit {
+  id          String   @id @default(cuid())
+  name        String
+  description String   @db.Text
+  sourceUrl   String?  @map("source_url")
+  isActive    Boolean  @default(true)
+  lastChecked DateTime @updatedAt @map("last_checked")
+
+  @@map("sme_benefits")
 }

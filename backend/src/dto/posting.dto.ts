@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsOptional, IsEnum } from 'class-validator';
+import { IsString, IsNotEmpty, IsOptional, IsEnum, IsArray, ArrayMaxSize } from 'class-validator';
 
 export enum PostingStatus {
   DRAFT = 'DRAFT',
@@ -28,7 +28,11 @@ export class UpdatePostingDto {
 
   @IsOptional()
   @IsString()
-  jobTitle?: string;
+  jobType?: string;
+
+  @IsOptional()
+  @IsString()
+  position?: string;
 
   @IsOptional()
   @IsString()
@@ -45,6 +49,13 @@ export class UpdatePostingDto {
   @IsOptional()
   @IsString()
   workLocation?: string;
+
+  // INP-002: AI 키워드
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  @ArrayMaxSize(10)
+  keywords?: string[];
 
   // INP-003: 기업 정보
   @IsOptional()

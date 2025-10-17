@@ -10,27 +10,30 @@ export interface JobPosting {
   createdAt: string;
   updatedAt: string;
   // INP-001: 핵심 채용 정보
-  companyName?: string;
-  jobTitle?: string;
-  careerLevel?: string;
-  employmentType?: string;
-  salaryRange?: string;
-  workLocation?: string;
+  companyName?: string | null;
+  jobType?: string | null;
+  position?: string | null;
+  careerLevel?: string | null;
+  employmentType?: string | null;
+  salaryRange?: string | null;
+  workLocation?: string | null;
   // INP-003: 기업 정보
-  companyIntro?: string;
-  companyCulture?: string;
-  benefits?: string;
-  logoImageUrl?: string;
+  companyIntro?: string | null;
+  companyCulture?: string | null;
+  benefits?: string | null;
+  logoImageUrl?: string | null;
   // INP-004: 스타일 설정
-  colorTone?: string;
-  styleConcept?: string;
+  colorTone?: string | null;
+  styleConcept?: string | null;
   // INP-005: 선택된 혜택
-  selectedBenefitsJson?: string;
+  selectedBenefitsJson?: string | null;
   // GEN-001/002: 생성된 결과물
-  generatedPosterUrl?: string;
-  generatedBannerUrl?: string;
-  generatedHtml?: string;
+  generatedPosterUrl?: string | null;
+  generatedBannerUrl?: string | null;
+  generatedHtml?: string | null;
 }
+
+export type JobPostingDetail = JobPosting;
 
 export interface PostingListItem {
   id: string;
@@ -56,7 +59,8 @@ export interface UpdatePostingRequest {
   title?: string;
   status?: string;
   companyName?: string;
-  jobTitle?: string;
+  jobType?: string;
+  position?: string;
   careerLevel?: string;
   employmentType?: string;
   salaryRange?: string;

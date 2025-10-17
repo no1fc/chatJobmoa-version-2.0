@@ -104,4 +104,22 @@ export class PostingService {
 
     return;
   }
+
+  async uploadLogo(id: string, userId: string, file: Express.Multer.File) {
+    // 소유권 확인
+    await this.findOne(id, userId);
+
+    // 파일 URL 생성
+    const logoUrl = `http://localhost:3056/uploads/logos/${file.filename}`;
+
+    // DB 업데이트
+    const updatedPosting = await this.prisma.jobPosting.update({
+      where: { id },
+      data: {
+        logoImageUrl: logoUrl,
+      },
+    });
+
+    return updatedPosting;
+  }
 }
