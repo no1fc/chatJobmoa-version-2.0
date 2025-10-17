@@ -44,44 +44,45 @@ model Verification {
   @@map("verifications")
 }
 
-// 채용 공고 프로젝트 모델 (PRJ-001 대비)
+// 채용 공고 프로젝트 모델 (PRJ-001)
 model JobPosting {
-  id          String   @id @default(cuid())
-  userId      String
+  id        String   @id @default(cuid())
+  title     String   // 프로젝트 제목
+  status    String   @default("DRAFT") // DRAFT, PUBLISHED, ARCHIVED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  // 기본 정보
-  title       String
-  companyName String
-  jobType     String   // 직종
-  position    String   // 직무
-  experience  String   // 경력 요건
-  employment  String   // 고용 형태
-  salary      String?  // 급여
-  location    String   // 근무지
+  //--- User와의 관계 설정 (Foreign Key) ---
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
 
-  // 상세 정보
-  description String?  @db.Text
-  requirements String? @db.Text
-  benefits    String?  @db.Text
+  //--- INP-001: 핵심 채용 정보 ---
+  companyName    String? @map("company_name")
+  jobType       String? @map("jobType")        // 직종
+  position       String? @map("position")        // 직무
+  careerLevel    String? @map("career_level")     // 경력 요건 (신입, 경력, 무관)
+  employmentType String? @map("employment_type")  // 고용 형태 (정규직, 계약직)
+  salaryRange    String? @map("salary_range")     // 급여 수준
+  workLocation   String? @map("work_location")    // 근무지
 
-  // 기업 정보
-  companyInfo String?  @db.Text
-  culture     String?  @db.Text
+  //--- INP-003: 기업 정보 ---
+  companyIntro   String? @map("company_intro")    @db.Text
+  companyCulture String? @map("company_culture")  @db.Text
+  benefits       String? @map("benefits")         @db.Text // 복리후생 (텍스트)
+  logoImageUrl   String? @map("logo_image_url")
 
-  // 생성된 콘텐츠
-  posterUrl   String?
-  bannerUrl   String?
-  htmlContent String?  @db.Text
+  //--- INP-004: 스타일 설정 ---
+  colorTone    String? @map("color_tone")       // "blue", "green"
+  styleConcept String? @map("style_concept")    // "professional", "friendly"
 
-  // 상태
-  status      String   @default("draft") // draft, published, archived
+  //--- INP-005: 혜택 (별도 테이블 관리 가능성 있음) ---
+  selectedBenefitsJson String? @map("selected_benefits_json") @db.Text // 선택된 혜택 ID 목록 (JSON 문자열)
 
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  //--- GEN-001/002: 생성된 결과물 ---
+  generatedPosterUrl String? @map("generated_poster_url")
+  generatedBannerUrl String? @map("generated_banner_url")
+  generatedHtml      String? @map("generated_html")       @db.Text
 
-  // Relations
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
+  @@index([userId]) // 사용자가 자기 프로젝트 목록을 빠르게 조회하도록 인덱스 설정
   @@map("job_postings")
 }
