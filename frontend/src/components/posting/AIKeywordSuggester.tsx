@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/common/Button';
 import { aiGeneratorService } from '@/services/aiGeneratorService';
 import { useUserStore } from '@/store/userStore';
@@ -33,12 +33,24 @@ export const AIKeywordSuggester: React.FC<AIKeywordSuggesterProps> = ({
     setSelectedKeywords(initialKeywords);
   }, [initialKeywords]);
 
+  const prevSelectedKeywordsRef = useRef<string[]>(selectedKeywords);
+
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
+      prevSelectedKeywordsRef.current = selectedKeywords;
       return;
     }
-    onKeywordsChange(selectedKeywords);
+    
+    // 배열의 실제 내용이 변경되었을 때만 콜백 호출
+    const hasChanged = 
+      prevSelectedKeywordsRef.current.length !== selectedKeywords.length ||
+      prevSelectedKeywordsRef.current.some((k, i) => k !== selectedKeywords[i]);
+    
+    if (hasChanged) {
+      prevSelectedKeywordsRef.current = selectedKeywords;
+      onKeywordsChange(selectedKeywords);
+    }
   }, [selectedKeywords, onKeywordsChange]);
 
   const handleRecommend = async () => {

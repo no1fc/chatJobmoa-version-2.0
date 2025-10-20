@@ -60,9 +60,7 @@ export const PostingEditPage = () => {
     keywords: [] as string[],
   });
 
-  useEffect(() => {
-    fetchPosting();
-  }, [postingId]);
+
 
   const fetchPosting = async () => {
     if (!token) return;
@@ -167,7 +165,14 @@ export const PostingEditPage = () => {
   };
 
   const handleKeywordsChange = useCallback((keywords: string[]) => {
-    setFormData((prev) => ({ ...prev, keywords }));
+    setFormData((prev) => {
+      // 배열 내용이 실제로 변경되었는지 확인
+      if (prev.keywords.length === keywords.length && 
+          prev.keywords.every((k, i) => k === keywords[i])) {
+        return prev;
+      }
+      return { ...prev, keywords };
+    });
   }, []);
 
   if (!mounted || !isAuthenticated) {
