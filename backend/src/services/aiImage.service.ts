@@ -15,7 +15,7 @@ export interface GeneratedImagePaths {
 
 @Injectable()
 export class AiImageService {
-  private ai: GoogleGenAI;
+  private readonly ai: GoogleGenAI;
 
   constructor(private readonly configService: ConfigService) {
     const apiKey = this.configService.get<string>('GEMINI_API_KEY');
@@ -68,7 +68,7 @@ Design a horizontal landscape banner suitable for a website header.`;
       const bannerPath = path.join(uploadDir, bannerFilename);
 
       // 포스터 이미지 생성 (16:9 aspect ratio for vertical poster)
-      const posterResponse: any = await ai.models.generateImages({
+      const posterResponse = await ai.models.generateImages({
         model: 'imagen-4.0-generate-001',
         prompt: posterPrompt,
         config: {
@@ -79,7 +79,7 @@ Design a horizontal landscape banner suitable for a website header.`;
       });
 
       // 배너 이미지 생성 (16:9 aspect ratio for horizontal banner)
-      const bannerResponse: any = await ai.models.generateImages({
+      const bannerResponse = await ai.models.generateImages({
         model: 'imagen-4.0-generate-001',
         prompt: bannerPrompt,
         config: {
@@ -90,8 +90,15 @@ Design a horizontal landscape banner suitable for a website header.`;
       });
 
       // 포스터 이미지 저장
-      if (posterResponse.predictions && posterResponse.predictions.length > 0) {
-        const posterImageData = posterResponse.predictions[0].bytesBase64Encoded;
+      if (posterResponse.generatedImages && posterResponse.generatedImages.length > 0) {
+
+          const firstImage = posterResponse.generatedImages?.[0];
+          if(!firstImage?.image?.imageBytes || !firstImage?.image?.mimeType || firstImage?.image?.mimeType !== 'image/jpeg'){
+              throw new Error('Invalid image data format');
+          }
+
+        const posterImageData = firstImage.image.imageBytes;
+
         if (posterImageData) {
           const posterBuffer = Buffer.from(posterImageData, 'base64');
           await fs.writeFile(posterPath, posterBuffer);
@@ -103,8 +110,14 @@ Design a horizontal landscape banner suitable for a website header.`;
       }
 
       // 배너 이미지 저장
-      if (bannerResponse.predictions && bannerResponse.predictions.length > 0) {
-        const bannerImageData = bannerResponse.predictions[0].bytesBase64Encoded;
+      if (bannerResponse.generatedImages && bannerResponse.generatedImages.length > 0) {
+
+          const firstImage = bannerResponse.generatedImages?.[0];
+          if(!firstImage?.image?.imageBytes || !firstImage?.image?.mimeType || firstImage?.image?.mimeType !== 'image/jpeg'){
+              throw new Error('Invalid image data format');
+          }
+
+        const bannerImageData = firstImage.image.imageBytes;
         if (bannerImageData) {
           const bannerBuffer = Buffer.from(bannerImageData, 'base64');
           await fs.writeFile(bannerPath, bannerBuffer);
