@@ -7,7 +7,7 @@ import { Button } from '@/components/common/Button';
 import { useUserStore } from '@/store/userStore';
 import { postingService, PostingListItem } from '@/services/postingService';
 
-export const DashboardPage = () => {
+const DashboardPage = () => {
   const router = useRouter();
   const { isAuthenticated, logout, token } = useUserStore();
   const [postings, setPostings] = useState<PostingListItem[]>([]);

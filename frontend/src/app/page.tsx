@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/common/Button';
 import { useUserStore } from '@/store/userStore';
 
-export const HomePage = () => {
+const HomePage = () => {
   const router = useRouter();
   const { isAuthenticated, logout } = useUserStore();
   const [mounted, setMounted] = useState(false);

@@ -18,21 +18,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- AI 기능 사용시 무한 리로딩 오류가 발생 해당 오류 확인 후 수정&#10;&#10;### 업데이트 요약&#10;- 무한 리로딩 오류 확인 후 수정&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인.">
-      <change afterPath="$PROJECT_DIR$/backend/src/services/export.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.aiassistant/rules/Project_PRD.md" beforeDir="false" afterPath="$PROJECT_DIR$/.aiassistant/rules/Project_PRD.md" afterDir="false" />
+    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[REFACTOR][beta_0.1.2]: 프로젝트 요구사항 및 종속성 업데이트&#10;&#10;### 주요 변경 사항&#10;- 프로젝트 명세에서 `OUT-003`(통합 정적 페이지 미리보기), `OUT-004`(통합 결과물 내보내기) 관련 기능 제거.&#10;- `StaticPagePreview.tsx`, `ExportControls.tsx` 파일 삭제.&#10;- `package-lock.json`에 Puppeteer 추가 (`@types/puppeteer`, `puppeteer` 라이브러리 종속성 추가).&#10;- 프로젝트에서 사용하지 않는 불필요한 `devDependencies` 제거 및 필요한 패키지 추가.&#10;&#10;### 업데이트 요약&#10;- 불필요한 기능 및 파일을 정리하여 명세 일관성 유지.&#10;- Puppeteer 추가로 향후 PDF/이미지 생성 기능 확장 가능성 확보.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 기능 테스트 완료.&#10;- [x] 빌드 성공 확인.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/aiImage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/aiImage.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/aiText.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/aiText.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/services/posting.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/posting.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/banner-1760690436580.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/poster-1760690436580.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/new/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/new/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/aiGeneratorService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/aiGeneratorService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/result/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/result/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/common/Checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/common/Checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/posting/BenefitSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/posting/BenefitSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/postingService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/postingService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,7 @@
       <workItem from="1761117093773" duration="16000" />
       <workItem from="1761871246964" duration="19599000" />
       <workItem from="1762099736010" duration="33000" />
-      <workItem from="1762128689158" duration="1362000" />
+      <workItem from="1762128689158" duration="6490000" />
     </task>
     <task id="LOCAL-00001" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
       <option name="closed" value="true" />
@@ -220,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760693800538</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[REFACTOR][beta_0.1.2]: 프로젝트 요구사항 및 종속성 업데이트&#10;&#10;### 주요 변경 사항&#10;- 프로젝트 명세에서 `OUT-003`(통합 정적 페이지 미리보기), `OUT-004`(통합 결과물 내보내기) 관련 기능 제거.&#10;- `StaticPagePreview.tsx`, `ExportControls.tsx` 파일 삭제.&#10;- `package-lock.json`에 Puppeteer 추가 (`@types/puppeteer`, `puppeteer` 라이브러리 종속성 추가).&#10;- 프로젝트에서 사용하지 않는 불필요한 `devDependencies` 제거 및 필요한 패키지 추가.&#10;&#10;### 업데이트 요약&#10;- 불필요한 기능 및 파일을 정리하여 명세 일관성 유지.&#10;- Puppeteer 추가로 향후 PDF/이미지 생성 기능 확장 가능성 확보.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 기능 테스트 완료.&#10;- [x] 빌드 성공 확인.">
+      <option name="closed" value="true" />
+      <created>1762132655807</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762132655807</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +255,9 @@
     <MESSAGE value="[PRJ-001] DashBord And 로그인 로그아웃 오류 해결&#10;&#10;[오류 해결]&#10;로그인 후 로그인 인증 해제 되는 오류를 해결&#10;&#10;[DashBord 제작]" />
     <MESSAGE value="project_setting.md 수정" />
     <MESSAGE value="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- `ai.controller.ts` 추가: JWT 인증 API로 AI 키워드 추천 기능 구현.&#10;- `aiImage.service.ts` 추가: GoogleGenAI 활용 포스터 및 배너 이미지 생성 기능 구현.&#10;- 신규 DTO 추가: AI 요청 및 중소기업 혜택 관리 (`smeBenefit.dto.ts`).&#10;- `ai.module.ts` 생성: 새로운 AI 관련 모듈 구성.&#10;&#10;### 업데이트 요약&#10;- AI 텍스트 및 이미지 생성 로직 세분화.&#10;- AI 데이터 생성 및 JWT 인증 컨트롤러 도입.&#10;- SmeBenefit 관리 모델, API 인터페이스 업데이트.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인." />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- `ai.controller.ts` 추가: JWT 인증 API로 AI 키워드 추천 기능 구현.&#10;- `aiImage.service.ts` 추가: GoogleGenAI 활용 포스터 및 배너 이미지 생성 기능 구현.&#10;- 신규 DTO 추가: AI 요청 및 중소기업 혜택 관리 (`smeBenefit.dto.ts`).&#10;- `ai.module.ts` 생성: 새로운 AI 관련 모듈 구성.&#10;&#10;### 업데이트 요약&#10;- AI 텍스트 및 이미지 생성 로직 세분화.&#10;- AI 데이터 생성 및 JWT 인증 컨트롤러 도입.&#10;- SmeBenefit 관리 모델, API 인터페이스 업데이트.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인." />
+    <MESSAGE value="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- AI 기능 사용시 무한 리로딩 오류가 발생 해당 오류 확인 후 수정&#10;&#10;### 업데이트 요약&#10;- 무한 리로딩 오류 확인 후 수정&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인." />
+    <MESSAGE value="[REFACTOR][beta_0.1.2]: 프로젝트 요구사항 및 종속성 업데이트&#10;&#10;### 주요 변경 사항&#10;- 프로젝트 명세에서 `OUT-003`(통합 정적 페이지 미리보기), `OUT-004`(통합 결과물 내보내기) 관련 기능 제거.&#10;- `StaticPagePreview.tsx`, `ExportControls.tsx` 파일 삭제.&#10;- `package-lock.json`에 Puppeteer 추가 (`@types/puppeteer`, `puppeteer` 라이브러리 종속성 추가).&#10;- 프로젝트에서 사용하지 않는 불필요한 `devDependencies` 제거 및 필요한 패키지 추가.&#10;&#10;### 업데이트 요약&#10;- 불필요한 기능 및 파일을 정리하여 명세 일관성 유지.&#10;- Puppeteer 추가로 향후 PDF/이미지 생성 기능 확장 가능성 확보.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 기능 테스트 완료.&#10;- [x] 빌드 성공 확인." />
+    <option name="LAST_COMMIT_MESSAGE" value="[REFACTOR][beta_0.1.2]: 프로젝트 요구사항 및 종속성 업데이트&#10;&#10;### 주요 변경 사항&#10;- 프로젝트 명세에서 `OUT-003`(통합 정적 페이지 미리보기), `OUT-004`(통합 결과물 내보내기) 관련 기능 제거.&#10;- `StaticPagePreview.tsx`, `ExportControls.tsx` 파일 삭제.&#10;- `package-lock.json`에 Puppeteer 추가 (`@types/puppeteer`, `puppeteer` 라이브러리 종속성 추가).&#10;- 프로젝트에서 사용하지 않는 불필요한 `devDependencies` 제거 및 필요한 패키지 추가.&#10;&#10;### 업데이트 요약&#10;- 불필요한 기능 및 파일을 정리하여 명세 일관성 유지.&#10;- Puppeteer 추가로 향후 PDF/이미지 생성 기능 확장 가능성 확보.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 기능 테스트 완료.&#10;- [x] 빌드 성공 확인." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

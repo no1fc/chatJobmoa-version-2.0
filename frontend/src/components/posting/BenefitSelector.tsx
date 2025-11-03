@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Checkbox } from '@/components/common/Checkbox';
 import { aiGeneratorService, SmeBenefit } from '@/services/aiGeneratorService';
 
@@ -17,11 +17,7 @@ export const BenefitSelector: React.FC<BenefitSelectorProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
 
-  useEffect(() => {
-    fetchBenefits();
-  }, []);
-
-  const fetchBenefits = async () => {
+  const fetchBenefits = useCallback(async () => {
     try {
       const data = await aiGeneratorService.getActiveBenefits();
       setBenefits(data);
@@ -31,7 +27,11 @@ export const BenefitSelector: React.FC<BenefitSelectorProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchBenefits();
+  }, [fetchBenefits]);
 
   const handleToggle = (benefitId: string) => {
     const newSelection = selectedBenefits.includes(benefitId)

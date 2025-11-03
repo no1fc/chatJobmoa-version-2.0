@@ -8,7 +8,7 @@ import { Input } from '@/components/common/Input';
 import { authService } from '@/services/authService';
 import { useUserStore } from '@/store/userStore';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const router = useRouter();
   const setAccessToken = useUserStore((state) => state.setAccessToken);
 

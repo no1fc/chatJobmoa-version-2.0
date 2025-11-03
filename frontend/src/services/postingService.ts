@@ -31,6 +31,7 @@ export interface JobPosting {
   generatedPosterUrl?: string | null;
   generatedBannerUrl?: string | null;
   generatedHtml?: string | null;
+  keywords?: string[] | null;
 }
 
 export type JobPostingDetail = JobPosting;
@@ -75,6 +76,7 @@ export interface UpdatePostingRequest {
   generatedPosterUrl?: string;
   generatedBannerUrl?: string;
   generatedHtml?: string;
+  keywords?: string[];
 }
 
 export interface GetPostingsQuery {
