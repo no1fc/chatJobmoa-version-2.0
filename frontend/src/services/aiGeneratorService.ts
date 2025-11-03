@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3056';
 
+console.log(API_URL);
+
 export interface RecommendKeywordsRequest {
   jobType: string;
   position: string;

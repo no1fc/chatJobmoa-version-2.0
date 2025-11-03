@@ -275,8 +275,8 @@ export const PostingEditPage = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-bold text-slate-900">기업 정보</h2>
             <Textarea
-              label="회사 소개"
-              placeholder="회사에 대해 소개해주세요"
+              label="회사 소개, 자격 요건, 우대 사항을 작성해주세요."
+              placeholder="회사를 소개하고 원하는 인재 정보를 입력하세요 @ 제목 - 구분 해서 작성해주세요."
               value={formData.companyIntro}
               onChange={(e) =>
                 setFormData({ ...formData, companyIntro: e.target.value })
@@ -284,8 +284,8 @@ export const PostingEditPage = () => {
               rows={4}
             />
             <Textarea
-              label="기업 문화"
-              placeholder="회사의 문화와 분위기를 설명해주세요"
+              label="회사의 기업 문화, 전형 절차, 지원기간, 문의처를 작성해주세요."
+              placeholder="기업의 분위기를 알려주고 지원 절차를 설명해주세요"
               value={formData.companyCulture}
               onChange={(e) =>
                 setFormData({ ...formData, companyCulture: e.target.value })

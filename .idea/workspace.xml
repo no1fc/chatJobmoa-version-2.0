@@ -18,11 +18,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- `ai.controller.ts` 추가: JWT 인증 API로 AI 키워드 추천 기능 구현.&#10;- `aiImage.service.ts` 추가: GoogleGenAI 활용 포스터 및 배너 이미지 생성 기능 구현.&#10;- 신규 DTO 추가: AI 요청 및 중소기업 혜택 관리 (`smeBenefit.dto.ts`).&#10;- `ai.module.ts` 생성: 새로운 AI 관련 모듈 구성.&#10;&#10;### 업데이트 요약&#10;- AI 텍스트 및 이미지 생성 로직 세분화.&#10;- AI 데이터 생성 및 JWT 인증 컨트롤러 도입.&#10;- SmeBenefit 관리 모델, API 인터페이스 업데이트.&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인.">
+    <list default="true" id="f638ebe3-e3b8-4d8d-b882-30da62350544" name="변경" comment="[FEAT][beta_0.1.1]: AI Controller, Image/Keyword Generation Services 추가&#10;&#10;### 주요 변경 사항&#10;- AI 기능 사용시 무한 리로딩 오류가 발생 해당 오류 확인 후 수정&#10;&#10;### 업데이트 요약&#10;- 무한 리로딩 오류 확인 후 수정&#10;&#10;### 확인 체크리스트&#10;- [x] 관련 API 테스트 완료.&#10;- [x] 빌드 성공 확인.">
+      <change afterPath="$PROJECT_DIR$/backend/src/services/export.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.aiassistant/rules/Project_PRD.md" beforeDir="false" afterPath="$PROJECT_DIR$/.aiassistant/rules/Project_PRD.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/services/aiImage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/aiImage.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/aiText.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/aiText.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/services/posting.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/posting.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/banner-1760690436580.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/postings/cmgud6h1m0005cq3dzpj666vd/poster-1760690436580.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posting/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/posting/AIKeywordSuggester.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/posting/AIKeywordSuggester.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/aiGeneratorService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/aiGeneratorService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="PRJ-001" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,8 +77,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;beta__0.1.1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;beta__0.1.2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -96,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -114,6 +125,12 @@
       <workItem from="1760693740737" duration="88000" />
       <workItem from="1760917947772" duration="11669000" />
       <workItem from="1761003026983" duration="47000" />
+      <workItem from="1761092983241" duration="6232000" />
+      <workItem from="1761106137811" duration="1000" />
+      <workItem from="1761117093773" duration="16000" />
+      <workItem from="1761871246964" duration="19599000" />
+      <workItem from="1762099736010" duration="33000" />
+      <workItem from="1762128689158" duration="1362000" />
     </task>
     <task id="LOCAL-00001" summary="[main] git command 모음 markdown 추가&#10;&#10;git command 확인을 위해 markdown 문서를 추가.">
       <option name="closed" value="true" />

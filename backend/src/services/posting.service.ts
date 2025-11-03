@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 import { CreatePostingDto, UpdatePostingDto } from '../dto/posting.dto';
+import {ConfigService} from "@nestjs/config";
 
 export interface PostingListResponse {
   data: Array<{
@@ -18,8 +19,13 @@ export interface PostingListResponse {
 
 @Injectable()
 export class PostingService {
-  constructor(private readonly prisma: PrismaService) {}
 
+    private serverUrl: string;
+  constructor(private readonly prisma: PrismaService, private readonly configService:ConfigService) {
+      const SERVER_URL = this.configService.get<string>('SERVER_URL');
+
+      this.serverUrl = SERVER_URL || 'http://localhost:3056';
+  }
   async create(userId: string, createPostingDto: CreatePostingDto) {
     const posting = await this.prisma.jobPosting.create({
       data: {
@@ -110,7 +116,8 @@ export class PostingService {
     await this.findOne(id, userId);
 
     // 파일 URL 생성
-    const logoUrl = `http://localhost:3056/uploads/logos/${file.filename}`;
+    // const logoUrl = `http://localhost:3056/uploads/logos/${file.filename}`;
+    const logoUrl = `${(this.serverUrl)}/uploads/logos/${file.filename}`;
 
     // DB 업데이트
     const updatedPosting = await this.prisma.jobPosting.update({
