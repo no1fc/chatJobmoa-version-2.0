@@ -4,8 +4,9 @@
   "description": "AI 채용 콘텐츠 제작 플랫폼 백엔드",
   "private": true,
   "scripts": {
-    "start": "node dist/main",
-    "start:dev": "nest start --watch",
+    "start": "node dist/main --host",
+    "start:dev-주석": "nest start --watch --host",
+    "start:dev": "nest start --watch --host 0.0.0.0 --port 3056",
     "start:prod": "node dist/main",
     "build": "nest build",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -29,6 +30,7 @@
     "@nestjs/schedule": "^6.0.1",
     "@prisma/client": "^5.8.0",
     "@types/multer": "^2.0.0",
+    "@types/puppeteer": "^5.4.7",
     "bcrypt": "^5.1.1",
     "canvas": "^3.2.0",
     "class-transformer": "^0.5.1",
@@ -37,6 +39,7 @@
     "nodemailer": "^6.9.7",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
+    "puppeteer": "^24.26.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },

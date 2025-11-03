@@ -17,8 +17,10 @@ async function bootstrap() {
   );
 
   // CORS 설정
+    // origin: 'http://localhost:3055', localhost 개발 환경에서는 변경해서 사용
+    // origin: 'http://58.151.241.130:3055',
   app.enableCors({
-    origin: 'http://localhost:3055',
+    origin: 'http://jobmoachat.kro.kr:3055',
     credentials: true,
   });
 
@@ -28,7 +30,8 @@ async function bootstrap() {
   });
 
   await app.listen(3056);
-  console.log('Backend server is running on http://localhost:3056');
+  // console.log('Backend server is running on http://localhost:3056');
+  console.log('Backend server is running on http://jobmoachat.kro.kr:3056');
 }
 
 bootstrap();
