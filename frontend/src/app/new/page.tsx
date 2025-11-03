@@ -8,7 +8,7 @@ import { Input } from '@/components/common/Input';
 import { useUserStore } from '@/store/userStore';
 import { postingService } from '@/services/postingService';
 
-export const NewPostingPage = () => {
+const NewPostingPage = () => {
   const router = useRouter();
   const { isAuthenticated, token } = useUserStore();
   const [title, setTitle] = useState('');

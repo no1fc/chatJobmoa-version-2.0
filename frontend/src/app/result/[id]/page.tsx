@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { postingService, JobPosting } from '@/services/postingService';
 import { Button } from '@/components/common/Button';
 import { useUserStore } from '@/store/userStore';
 
-export default function ResultPage() {
+const ResultPage = () => {
   const params = useParams();
   const router = useRouter();
   const postingId = params.id as string;
@@ -22,19 +22,7 @@ export default function ResultPage() {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-
-    if (!isAuthenticated || !token) {
-      alert('로그인이 필요합니다.');
-      router.push('/login');
-      return;
-    }
-
-    fetchPosting();
-  }, [mounted, isAuthenticated, token, postingId, router]);
-
-  const fetchPosting = async () => {
+  const fetchPosting = useCallback(async () => {
     if (!token) return;
 
     try {
@@ -56,7 +44,19 @@ export default function ResultPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token, postingId, router]);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    if (!isAuthenticated || !token) {
+      alert('로그인이 필요합니다.');
+      router.push('/login');
+      return;
+    }
+
+    fetchPosting();
+  }, [mounted, isAuthenticated, token, router, fetchPosting]);
 
   const handleDownloadImage = async (imageUrl: string, filename: string) => {
     try {
@@ -259,7 +259,7 @@ export default function ResultPage() {
                 </div>
                 <div className="bg-slate-100 rounded-lg p-8 flex items-center justify-center">
                   <img
-                    src={posting.generatedPosterUrl}
+                    src={posting.generatedPosterUrl || ''}
                     alt="Generated Poster"
                     className="max-w-full max-h-[800px] rounded-lg shadow-lg"
                   />
@@ -284,7 +284,7 @@ export default function ResultPage() {
                 </div>
                 <div className="bg-slate-100 rounded-lg p-8 flex items-center justify-center">
                   <img
-                    src={posting.generatedBannerUrl}
+                    src={posting.generatedBannerUrl || ''}
                     alt="Generated Banner"
                     className="max-w-full max-h-[400px] rounded-lg shadow-lg"
                   />
@@ -320,7 +320,7 @@ export default function ResultPage() {
                     <p className="text-xs text-slate-600">미리보기</p>
                   </div>
                   <div className="p-6 max-h-[800px] overflow-y-auto">
-                    <div dangerouslySetInnerHTML={{ __html: posting.generatedHtml }} />
+                    <div dangerouslySetInnerHTML={{ __html: posting.generatedHtml || '' }} />
                   </div>
                 </div>
 
@@ -352,4 +352,6 @@ export default function ResultPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ResultPage;

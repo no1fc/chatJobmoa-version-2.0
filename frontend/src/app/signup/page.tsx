@@ -9,7 +9,7 @@ import { Checkbox } from '@/components/common/Checkbox';
 import { authService } from '@/services/authService';
 import { useUserStore } from '@/store/userStore';
 
-export const SignUpPage = () => {
+const SignUpPage = () => {
   const router = useRouter();
   const setAccessToken = useUserStore((state) => state.setAccessToken);
 
@@ -29,7 +29,7 @@ export const SignUpPage = () => {
     phoneVerificationToken: '',
   });
 
-  const [step, setStep] = useState<'input' | 'verify'>('input');
+  // const [step, setStep] = useState<'input' | 'verify'>('input');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [emailCodeSent, setEmailCodeSent] = useState(false);

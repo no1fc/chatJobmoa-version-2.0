@@ -12,7 +12,7 @@ import { postingService, JobPosting } from '@/services/postingService';
 import { aiGeneratorService } from '@/services/aiGeneratorService';
 import { useUserStore } from '@/store/userStore';
 
-export const PostingEditPage = () => {
+const PostingEditPage = () => {
   const params = useParams();
   const router = useRouter();
   const postingId = params.id as string;
@@ -24,22 +24,6 @@ export const PostingEditPage = () => {
   const [generating, setGenerating] = useState(false);
   const [logoFile, setLogoFile] = useState<File | null>(null);
   const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    if (!isAuthenticated || !token) {
-      alert('로그인이 필요합니다.');
-      router.push('/login');
-      return;
-    }
-
-    fetchPosting();
-  }, [mounted, isAuthenticated, token, router]);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -60,9 +44,11 @@ export const PostingEditPage = () => {
     keywords: [] as string[],
   });
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-
-  const fetchPosting = async () => {
+  const fetchPosting = useCallback(async () => {
     if (!token) return;
 
     try {
@@ -95,7 +81,19 @@ export const PostingEditPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token, postingId, router]);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    if (!isAuthenticated || !token) {
+      alert('로그인이 필요합니다.');
+      router.push('/login');
+      return;
+    }
+
+    fetchPosting();
+  }, [mounted, isAuthenticated, token, router, fetchPosting]);
 
   const handleSave = async () => {
     if (!token) return;
